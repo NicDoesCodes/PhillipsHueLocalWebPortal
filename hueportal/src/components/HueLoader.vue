@@ -1,10 +1,28 @@
 
 <template>
-  <div class="hello">
-    <h1 id="huestat">{{ message}}</h1>
-    <span>{{ bridgeIP }}</span>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row top-bar">
+        <div class="col-lg-12">
+          <h1>Hue portal</h1>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-sm-4 sidebar">
+            <h2>Status:</h2>
+              <span>{{ bridgeIP }}</span>
+          </div>
+          <div class="col-sm-8 body-content">
+            
+          </div>
+        </div>
+      
+    </div>
   </div>
+
 </template>
+
 
 <script>
 
