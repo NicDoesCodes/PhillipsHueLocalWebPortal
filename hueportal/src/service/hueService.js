@@ -18,4 +18,20 @@ export default class HueService{
             }
         });
     }
+
+    getAllLights(callback){
+        axios({ method: "GET", "url": "http://"+localStorage.ipAddress+"/api/V1Cu7Prl7FiYPTDoD84Upyxinaqj4Zn57wxjkZ3B" }).then(result => {
+            var lights = false;
+
+            if(result.data.lights != "undefined"){
+                lights = result.data.lights;
+            }
+            callback(lights)
+        }, error => {
+            if(error){
+                console.log(error);
+            }
+        });
+    }
+
   }

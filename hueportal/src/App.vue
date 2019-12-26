@@ -1,22 +1,32 @@
 <template>
   <div id="app">
-    <div class="row">
+    <div class="row top-row">
         <div class="col-lg-12">  
             <HueLoader message="Welcome to Your Hue Portal App"/>
         </div>
     </div>
-    
+
+    <div class="row main-content">
+      <div class="col-lg-4 sidebar">
+      </div>
+
+      <div class="col-lg-8 content-area">
+        <LightList />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 
-import HueLoader from './components/HueLoader.vue'
+import HueLoader from './components/HueLoader.vue';
+import LightList from  './components/Lights.vue';
 
 export default {
   name: 'app',
   components: {
-    HueLoader
+    HueLoader,
+    LightList
   }
 }
 </script>
