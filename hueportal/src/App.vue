@@ -8,7 +8,6 @@
 
 import HueLoader from './components/HueLoader.vue'
 
-
 export default {
   name: 'app',
   components: {

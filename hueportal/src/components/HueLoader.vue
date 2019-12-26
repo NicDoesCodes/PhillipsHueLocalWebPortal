@@ -27,6 +27,7 @@ export default {
          Hue.findBridge(function(ipAddress){
           if(ipAddress){
             vm.bridgeIP = ipAddress;
+            localStorage.ipAddress = ipAddress;
           }else{
             vm.bridgeIP = "No bridge found...";
           }
