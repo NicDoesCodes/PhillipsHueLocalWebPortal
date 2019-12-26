@@ -1,10 +1,14 @@
 
 <template>
-  <div class="hello">
-    <h1 id="huestat">{{ message}}</h1>
-    <span>{{ bridgeIP }}</span>
+
+  <div class="row">
+    <div class="col-lg-12">
+          <h1>Hue portal</h1>
+    </div>
   </div>
+
 </template>
+
 
 <script>
 
