@@ -20,7 +20,8 @@ export default class HueService{
     }
 
     getAllLights(callback){
-        axios({ method: "GET", "url": "http://"+localStorage.ipAddress+"/api/V1Cu7Prl7FiYPTDoD84Upyxinaqj4Zn57wxjkZ3B" }).then(result => {
+        console.log(process.env.VUE_APP_HUE_USER);
+        axios({ method: "GET", "url": "http://"+localStorage.ipAddress+"/api/"+process.env.VUE_APP_HUE_USER}).then(result => {
             var lights = false;
 
             if(result.data.lights != "undefined"){
@@ -32,6 +33,24 @@ export default class HueService{
                 console.log(error);
             }
         });
+    }
+
+    toggleLight(lightIndex,currentState){
+        
+        var newState = false;
+
+        if(currentState == false){
+            newState = true;
+        }
+        axios({
+            method: 'PUT',
+            url: "http://"+localStorage.ipAddress+"/api/"+process.env.VUE_APP_HUE_USER+"/lights/"+lightIndex+"/state" ,
+            data: {
+                "on":newState
+            }
+        }),error => {
+            console.log(error);
+        };
     }
 
   }

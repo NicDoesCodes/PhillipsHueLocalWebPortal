@@ -3,14 +3,24 @@
 
   <div class="row">
         <ul id="example-1">
-            <li v-for="light in lights" v-bind:key="light.uniqueid">
+            <li v-for="(light, index) in lights" v-bind:key="light.uniqueid">
                 <div class="col-lg">
                     <div class="card">
                         <div class="card-header">
                             {{ light.name }}
                         </div>
                         <div class="card-body">
-                            {{ light.type }}
+                            <div class="row">
+                                <div class="col-sm">
+                                    <label>On/Off </label>
+                                </div>
+                                <div class="col-sm">
+                                    <label class="switch">
+                                        <input type="checkbox" v-on:click="toggleLightStatus(index,light.state.on)" v-model="light.state.on"  data-toggle="toggle" data-onstyle="success">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -35,7 +45,6 @@ export default {
   },
   watch: {
       lights: function(){
-
       }
   },
   created:function(){
@@ -48,6 +57,9 @@ export default {
                 vm.lights = responseLights;
             });
         }
+    },
+    toggleLightStatus:function(lightIndex,currentState){
+        Hue.toggleLight(lightIndex,currentState);
     }
   }
 }
