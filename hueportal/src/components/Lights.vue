@@ -58,7 +58,7 @@ export default {
         Hue.toggleLight(lightIndex,currentState);
     },
     sliderChange:function(lightID,brightnessValue){
-
+      Hue.setBrightness(lightID,brightnessValue);
     }
   }
 }
