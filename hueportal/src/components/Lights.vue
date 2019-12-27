@@ -37,7 +37,7 @@ export default {
       min: 0,
       max: 254
     }
-,watch: {
+  },watch: {
       lights: function(light){
         console.log(light);
       }
