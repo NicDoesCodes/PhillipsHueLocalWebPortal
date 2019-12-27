@@ -1,13 +1,6 @@
 
 <template>
-
-  <div class="row">
-    <div class="col-lg-12">
-          <h1>Hue portal</h1>
-          <input type="text" value="000" name="border-color" class="pick-a-color form-control">
-    </div>
-  </div>
-
+    <h1>Hue portal</h1>
 </template>
 
 
