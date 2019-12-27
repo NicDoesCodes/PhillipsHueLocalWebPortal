@@ -7,8 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 require('./assets/style.css')
 
 
+
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
 }).$mount('#app')
+
+

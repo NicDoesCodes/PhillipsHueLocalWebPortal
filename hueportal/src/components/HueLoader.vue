@@ -4,6 +4,7 @@
   <div class="row">
     <div class="col-lg-12">
           <h1>Hue portal</h1>
+          <input type="text" value="000" name="border-color" class="pick-a-color form-control">
     </div>
   </div>
 
@@ -39,6 +40,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

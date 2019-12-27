@@ -13,8 +13,10 @@
     "bootstrap": "^4.4.1",
     "core-js": "^3.4.3",
     "jquery": "^3.4.1",
+    "normalize-number": "^1.0.3",
     "popper.js": "^1.16.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-color": "^2.7.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",

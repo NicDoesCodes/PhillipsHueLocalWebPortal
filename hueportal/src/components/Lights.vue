@@ -21,8 +21,12 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="row color-row">
+                              <div class=col-sm>
+                                <chrome-picker :value="{ h: 150, s: 0.66, v: 0.30 }" @input="updateValue"></chrome-picker>
+                              </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </li>
@@ -35,13 +39,18 @@
 <script>
 
 import HueService from '../service/hueService';
-const Hue = new HueService;
+import ColourService from '../service/colourService';
+import { Chrome } from 'vue-color'
 
+const Hue = new HueService;
+const Colour = new ColourService;
 
 export default {
   name: 'LightList',
   props: {
     lights: []
+  },components:{
+    'chrome-picker': Chrome
   },
   watch: {
       lights: function(){
@@ -49,6 +58,7 @@ export default {
   },
   created:function(){
     this.getLights();
+    console.log(Colour.convertRGBtoXYZ(239,21,75));
   },methods:{
     getLights:function(){
         var vm = this;
