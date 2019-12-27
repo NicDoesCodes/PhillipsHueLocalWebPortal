@@ -50,4 +50,16 @@ export default class HueService{
         };
     }
 
+    setBrightness(lightIndex,brightnessValue){
+        axios({
+            method: 'PUT',
+            url: "http://"+localStorage.ipAddress+"/api/"+process.env.VUE_APP_HUE_USER+"/lights/"+lightIndex+"/state" ,
+            data: {
+                "bri":brightnessValue
+            }
+        }),error => {
+            console.log(error);
+        };
+    }
+
   }

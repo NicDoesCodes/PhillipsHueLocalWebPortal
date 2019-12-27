@@ -3,7 +3,7 @@
   <ul id="example-1">
     <li v-for="(light, index) in lights" v-bind:key="light.uniqueid">
       <v-col cols="8">
-        <v-card dark>
+        <v-card dark width="400px">
           <v-list-item three-line>
             <v-list-item-content>
               <v-list-item-title class="headline mb-1">{{ light.name }}</v-list-item-title>
@@ -37,7 +37,7 @@ export default {
       min: 0,
       max: 254
     }
-,watch: {
+  },watch: {
       lights: function(light){
         console.log(light);
       }
@@ -58,7 +58,7 @@ export default {
         Hue.toggleLight(lightIndex,currentState);
     },
     sliderChange:function(lightID,brightnessValue){
-
+      Hue.setBrightness(lightID,brightnessValue);
     }
   }
 }
