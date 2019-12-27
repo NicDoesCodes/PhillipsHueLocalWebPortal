@@ -25,6 +25,7 @@
 <script>
 
 import HueService from '../service/hueService';
+
 const Hue = new HueService;
 
 export default {
@@ -36,15 +37,14 @@ export default {
       min: 0,
       max: 254
     }
-  },
-  watch: {
+,watch: {
       lights: function(light){
         console.log(light);
       }
   },
   created:function(){
     this.getLights();
-    
+
   },methods:{
     getLights:function(){
         var vm = this;

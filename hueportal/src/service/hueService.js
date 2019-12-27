@@ -3,7 +3,6 @@ import axios from 'axios';
 export default class HueService{
     
     findBridge(callback) {
-        
         axios({ method: "GET", "url": "https://discovery.meethue.com" }).then(result => {
             result.data.forEach(element => {
                 if(element.hasOwnProperty('internalipaddress')){
@@ -20,7 +19,6 @@ export default class HueService{
     }
 
     getAllLights(callback){
-        console.log(process.env.VUE_APP_HUE_USER);
         axios({ method: "GET", "url": "http://"+localStorage.ipAddress+"/api/"+process.env.VUE_APP_HUE_USER}).then(result => {
             var lights = false;
 
@@ -36,7 +34,6 @@ export default class HueService{
     }
 
     toggleLight(lightIndex,currentState){
-        
         var newState = false;
 
         if(currentState == false){

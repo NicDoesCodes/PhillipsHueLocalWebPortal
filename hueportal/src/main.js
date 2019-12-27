@@ -8,9 +8,12 @@ import vuetify from './plugins/vuetify';
 require('./assets/style.css')
 
 
+
 Vue.config.productionTip = false
 
 new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
+
