@@ -1,43 +1,53 @@
 <template>
-  <div id="app">
-    <div class="row top-row">
-        <div class="col-lg-12">  
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      clipped
+    >
+      
+    </v-navigation-drawer>
+
+    <v-app-bar
+      app
+      clipped-left
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title>Phillips Hue Portal</v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="12">
             <HueLoader message="Welcome to Your Hue Portal App"/>
-        </div>
-    </div>
-
-    <div class="row main-content">
-      <div class="col-lg-4 sidebar">
-      </div>
-
-      <div class="col-lg-8 content-area">
-        <LightList />
-      </div>
-    </div>
-  </div>
+             <v-row justify="space-around">
+                <LightList />
+             </v-row>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-
 import HueLoader from './components/HueLoader.vue';
 import LightList from  './components/Lights.vue';
 
-export default {
-  name: 'app',
-  components: {
-    HueLoader,
-    LightList
+  export default {
+    components:{
+      HueLoader,
+      LightList
+    },
+    props: {
+      source: String,
+    },
+    data: () => ({
+      drawer: null,
+    }),
+    created () {
+      this.$vuetify.theme.dark = true
+    },
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-
-}
-</style>
